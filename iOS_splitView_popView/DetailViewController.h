@@ -11,6 +11,7 @@
 
 @interface DetailViewController : UIViewController<MasterDetailDelegate>
 
+@property (strong, nonatomic) IBOutlet UIWebView *webView;
 @property (strong, nonatomic) id detailItem;
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
 

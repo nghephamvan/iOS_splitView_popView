@@ -15,16 +15,19 @@
 @end
 
 @implementation MasterViewController
-@synthesize objects, deletgate;
+@synthesize objects;
+@synthesize deletgate = _deletgate;
+@synthesize detailViewController = _detailViewController;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
-    
-    objects = [[NSMutableArray alloc] initWithObjects:@"http://www.google.com", @"http://www.facebook.com",@"http://www.yahoo.com", nil];
+    objects = [[NSMutableArray alloc] initWithObjects:@"https://www.google.com", @"http://www.facebook.com",@"https://www.yahoo.com", nil];
     /*UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;*/
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+    self.deletgate = self.detailViewController;
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -38,7 +41,6 @@
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
-    deletgate = nil;
 }
 
 /*- (void)insertNewObject:(id)sender {
@@ -51,15 +53,20 @@
 }*/
 
 #pragma mark - Segues
-
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+//    NSDate *object = [self.objects objectAtIndex:indexPath.row];
+//    [self.deletgate masterAction:object];
+//}
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         NSDate *object = self.objects[indexPath.row];
         DetailViewController *controller = (DetailViewController *)[[segue destinationViewController] topViewController];
+
         [controller setDetailItem:object];
         controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
         controller.navigationItem.leftItemsSupplementBackButton = YES;
+//        [self.deletgate masterAction:object];
     }
 }
 

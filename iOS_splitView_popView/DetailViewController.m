@@ -13,7 +13,7 @@
 @end
 
 @implementation DetailViewController
-
+@synthesize webView, detailDescriptionLabel;
 #pragma mark - Managing the detail item
 
 - (void)setDetailItem:(id)newDetailItem {
@@ -29,6 +29,8 @@
     // Update the user interface for the detail item.
     if (self.detailItem) {
         self.detailDescriptionLabel.text = [self.detailItem description];
+        NSURL *url = [NSURL URLWithString:self.detailItem];
+        [webView loadRequest: [NSURLRequest requestWithURL:url]];
     }
 }
 
@@ -44,6 +46,9 @@
 }
 
 - (void) masterAction:(id)sender {
-    
+    NSLog(@"Action - %@", sender);
+    [self setDetailItem:sender];
+    NSURL *url = [NSURL URLWithString:sender];
+    [webView loadRequest: [NSURLRequest requestWithURL:url]];
 }
 @end
