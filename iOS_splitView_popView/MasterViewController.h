@@ -7,13 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MasterDetailDelegate.h"
 
 @class DetailViewController;
 
 @interface MasterViewController : UITableViewController
 
 @property (strong, nonatomic) DetailViewController *detailViewController;
-
+@property (weak, nonatomic) id <MasterDetailDelegate> deletgate;
 
 @end
 

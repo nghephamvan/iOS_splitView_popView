@@ -29,6 +29,7 @@
 		8481DED71EF3C83F005AB1D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8481DEDA1EF3C83F005AB1D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8481DEDC1EF3C83F005AB1D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8481DEE21EF3D29D005AB1D2 /* MasterDetailDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterDetailDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +64,7 @@
 			children = (
 				8481DECB1EF3C83F005AB1D2 /* AppDelegate.h */,
 				8481DECC1EF3C83F005AB1D2 /* AppDelegate.m */,
+				8481DEE21EF3D29D005AB1D2 /* MasterDetailDelegate.h */,
 				8481DECE1EF3C83F005AB1D2 /* MasterViewController.h */,
 				8481DECF1EF3C83F005AB1D2 /* MasterViewController.m */,
 				8481DED11EF3C83F005AB1D2 /* DetailViewController.h */,

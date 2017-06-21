@@ -43,4 +43,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void) masterAction:(id)sender {
+    
+}
 @end
